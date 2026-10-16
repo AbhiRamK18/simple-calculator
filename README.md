@@ -2,6 +2,7 @@
 # Simple Calculator Web App
 
 ## Live Demo
+https://calculator-project-zeta-orpin.vercel.app/
 
 ## Description
 A responsive calculator web application built using HTML,
