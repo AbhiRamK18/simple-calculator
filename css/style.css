@@ -1,0 +1,238 @@
+
+/* ---------- Basic Reset ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #080808;
+    --calculator: #141414;
+    --display: #0c0c0c;
+    --button: #242424;
+    --button-hover: #353535;
+    --operator: #34302b;
+    --orange: #ff9500;
+    --orange-hover: #e88700;
+    --white: #ffffff;
+    --gray: #999999;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: var(--black);
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ---------- Calculator Container ---------- */
+
+.calculator {
+    width: 100%;
+    max-width: 370px;
+    padding: 24px;
+    background: var(--calculator);
+    border: 1px solid #292929;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.65);
+}
+
+/* ---------- Header ---------- */
+
+.calculator-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.calculator-header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.calculator-header p {
+    color: var(--gray);
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+.calculator-icon {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: #252525;
+    color: var(--orange);
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+/* ---------- Display ---------- */
+
+.display {
+    min-height: 125px;
+    padding: 20px 16px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    background: var(--display);
+    border: 1px solid #292929;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.expression {
+    width: 100%;
+    min-height: 24px;
+    color: var(--gray);
+    text-align: right;
+    font-size: 0.95rem;
+    overflow-wrap: anywhere;
+}
+
+.result {
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+    color: var(--white);
+    text-align: right;
+    font-size: clamp(2rem, 9vw, 2.6rem);
+    font-weight: 600;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+}
+
+/* ---------- Button Grid ---------- */
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.btn {
+    min-width: 0;
+    min-height: 58px;
+    border: none;
+    border-radius: 14px;
+    background: var(--button);
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background 0.15s ease,
+        transform 0.15s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn:hover {
+    background: var(--button-hover);
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* Clear and Delete Buttons */
+
+.btn.function {
+    background: #303030;
+    color: #ffad33;
+    font-size: 0.95rem;
+}
+
+.btn.function:hover {
+    background: #414141;
+}
+
+/* Arithmetic Operator Buttons */
+
+.btn.operator {
+    background: var(--operator);
+    color: var(--orange);
+    font-size: 1.45rem;
+}
+
+.btn.operator:hover {
+    background: #484038;
+}
+
+/* Orange Equals Button */
+
+.btn.equals {
+    grid-row: span 2;
+    background: var(--orange);
+    color: var(--black);
+    font-size: 1.7rem;
+}
+
+.btn.equals:hover {
+    background: var(--orange-hover);
+}
+
+/* Zero Button Occupies Two Columns */
+
+.btn.zero {
+    grid-column: span 2;
+}
+
+/* ---------- Footer ---------- */
+
+.footer-text {
+    margin-top: 22px;
+    text-align: center;
+    color: #777777;
+    font-size: 0.75rem;
+}
+
+/* ---------- Keyboard Focus ---------- */
+
+.btn:focus-visible {
+    outline: 2px solid var(--orange);
+    outline-offset: 3px;
+}
+
+/* ---------- Responsive Layout ---------- */
+
+@media (max-width: 400px) {
+    .calculator {
+        padding: 17px;
+        border-radius: 19px;
+    }
+
+    .buttons {
+        gap: 9px;
+    }
+
+    .btn {
+        min-height: 53px;
+        border-radius: 12px;
+    }
+
+    .display {
+        min-height: 115px;
+    }
+}
+
+/* ---------- Reduced Motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .btn {
+        transition: none;
+    }
+
+    .btn:active {
+        transform: none;
+    }
+}

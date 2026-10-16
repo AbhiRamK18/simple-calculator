@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="A simple black and orange calculator built with HTML, CSS and JavaScript.">
+
+    <title>Simple Calculator</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+
+    <main class="calculator">
+
+        <header class="calculator-header">
+            <div>
+                <h1>Calculator</h1>
+                <p>Simple. Fast. Accurate.</p>
+            </div>
+            <div class="calculator-icon">÷</div>
+        </header>
+
+        <!-- Calculator Display -->
+        <section class="display" aria-label="Calculator display">
+            <div class="expression" id="expression"
+                 aria-label="Current expression"></div>
+
+            <output class="result" id="result"
+                    aria-live="polite" aria-atomic="true">0</output>
+        </section>
+
+        <!-- Calculator Buttons -->
+        <section class="buttons" aria-label="Calculator buttons">
+
+            <button class="btn function" data-action="clear">AC</button>
+            <button class="btn function" data-action="delete">DEL</button>
+            <button class="btn operator" data-value="/">÷</button>
+            <button class="btn operator" data-value="*">×</button>
+
+            <button class="btn" data-value="7">7</button>
+            <button class="btn" data-value="8">8</button>
+            <button class="btn" data-value="9">9</button>
+            <button class="btn operator" data-value="-">−</button>
+
+            <button class="btn" data-value="4">4</button>
+            <button class="btn" data-value="5">5</button>
+            <button class="btn" data-value="6">6</button>
+            <button class="btn operator" data-value="+">+</button>
+
+            <button class="btn" data-value="1">1</button>
+            <button class="btn" data-value="2">2</button>
+            <button class="btn" data-value="3">3</button>
+            <button class="btn equals" data-action="calculate"
+                    aria-label="Calculate result">=</button>
+
+            <button class="btn zero" data-value="0">0</button>
+            <button class="btn" data-value=".">.</button>
+
+        </section>
+
+        <p class="footer-text">Made with HTML, CSS &amp; JavaScript</p>
+
+    </main>
+
+</body>
+</html>
